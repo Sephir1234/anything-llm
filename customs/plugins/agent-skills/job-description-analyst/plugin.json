@@ -1,0 +1,26 @@
+{
+  "active": true,
+  "hubId": "job-description-analyst",
+  "name": "Job Description Analyst",
+  "version": "1.0.0",
+  "description": "Analyzes job descriptions to extract key requirements such as skills, experience, and education.",
+  "permissions": {
+    "file_access": "/app/server/storage/job-descriptions"
+  },
+  "entrypoint": {
+    "file": "handler.js",
+    "params": {
+      "job_description": {
+        "description": "Path to the job description file",
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "prompt": "Analyze job description for a software engineer role",
+      "call": "{\"job_description\": \"/app/server/storage/job-descriptions/software-engineer.txt\"}"
+    }
+  ],
+  "imported": true
+}
