@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Search Candidates",
+  "version": "1.0",
+  "description": "Chrome extension for searching candidates on LinkedIn.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "Search Candidates Icon.png",
+      "48": "Search Candidates Icon.png",
+      "128": "Search Candidates Icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
